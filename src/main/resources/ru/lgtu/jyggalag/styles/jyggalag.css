@@ -1,0 +1,1422 @@
+/* ═══════════════════════════════════════════════════════════
+    JYGGALAG  · Версия 1.1  ·  Glassmorphism · Lavender × Sky
+   ═══════════════════════════════════════════════════════════ */
+* {
+
+    /* Фирменные цвета */
+    -jy-primary: #caa7ff;
+    -jy-secondary: #91c6ff;
+    -jy-accent: #ffe4a8;
+    -jy-danger: #ff9eb5;
+
+    /* Фоновые поверхности */
+    -jy-bg-1: #f8f4ff;
+    -jy-bg-2: #edf6ff;
+    -jy-bg-3: #eef4ff;
+    -jy-bg-4: #f8f3ff;
+    -jy-bg-5: #eef5ff;
+    -jy-bg-6: #f9fbff;
+
+    /* Типографика */
+    -jy-text: #4d5687;
+    -jy-text-light: #7f89b4;
+    -jy-text-muted: #aab3d4;
+    -jy-text-accent: #caa7ff;
+
+    /* Стекло */
+    -jy-glass: rgba(255, 255, 255, 0.72);
+    -jy-glass-strong: rgba(255, 255, 255, 0.90);
+    -jy-glass-subtle: rgba(255, 255, 255, 0.45);
+
+    /* Тени */
+    -jy-shadow-soft: dropshadow(gaussian, rgba(110, 140, 255, 0.20), 14, 0.2, 0, 6);
+    -jy-shadow-glow: dropshadow(gaussian, rgba(202, 167, 255, 0.50), 16, 0.3, 0, 0);
+    -jy-shadow-blue: dropshadow(gaussian, rgba(145, 198, 255, 0.40), 20, 0.3, 0, 8);
+
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+.jy-root {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            -jy-bg-1,
+            -jy-bg-2
+    );
+    -fx-font-family: "Inter";
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+
+.mainHeader {
+    -fx-background-radius: 20px 20px 0 0;
+    -fx-border-radius: 20px 20px 0 0;
+}
+
+.welcomeTitle {
+    -fx-font-size: 30px;
+    -fx-text-fill: #5060b8;
+}
+
+
+.jy-welcomeBanner {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 1), 30, 0.8, 0, 0);
+}
+
+.main {
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: stretch;
+    -fx-background-position: center center;
+}
+
+.background {
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+.bg-1 {
+    -fx-background-image: url("../assets/bg1.png");
+}
+
+.bg-2 {
+    -fx-background-image: url("../assets/bg2.png");
+}
+
+.bg-3 {
+    -fx-background-image: url("../assets/bg3.png");
+}
+
+.bg-4 {
+    -fx-background-image: url("../assets/bg4.png");
+}
+
+.bg-5 {
+    -fx-background-image: url("../assets/bg5.png");
+}
+
+.bg-6 {
+    -fx-background-image: url("../assets/bg6.png");
+}
+
+
+/* ─── Карточки ───────────────────────────────────────────────── */
+
+
+.jy-card {
+    -fx-background-color: -jy-glass;
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+    -fx-border-color: rgba(255, 255, 255, 0.55);
+    -fx-border-width: 1px;
+    -fx-padding: 24;
+    -fx-effect: -jy-shadow-soft;
+}
+
+
+.jy-hero-card {
+    -fx-background-color: linear-gradient(
+            to right,
+            rgba(202, 167, 255, 0.70),
+            rgba(145, 198, 255, 0.70)
+    );
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-border-color: rgba(255, 255, 255, 0.60);
+    -fx-border-width: 1px;
+    -fx-padding: 30;
+    -fx-effect: -jy-shadow-blue;
+}
+
+
+.jy-mini-card {
+    -fx-background-color: -jy-glass-subtle;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255, 255, 255, 0.50);
+    -fx-border-width: 1px;
+    -fx-padding: 10 14;
+}
+
+
+/* ─── Типографика ────────────────────────────────────────────── */
+
+.jy-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #a98cff, #77bbff);
+    -fx-effect: dropshadow(gaussian, rgb(255, 255, 255), 23, 0.3, 0, 0);
+}
+
+.jy-subtitle {
+    -fx-font-size: 15px;
+    -fx-text-fill: -jy-text-light;
+}
+
+.jy-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text-muted;
+}
+
+.jy-cardText {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text-accent;
+}
+
+.jy-welcomeCardTitle {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    /*-fx-text-fill: #77bbff;*/
+}
+
+.jy-caption {
+    -fx-font-size: 11px;
+    -fx-text-fill: -jy-text-muted;
+}
+
+
+/* ─── Кнопки ─────────────────────────────────────────────────── */
+
+/*
+    jy-button-primary
+    ─────────────────
+    Главное действие. Магический градиент лаванда → небо.
+*/
+
+.jy-button-primary {
+    -fx-background-color: linear-gradient(
+            to right,
+            #caa7ff,
+            #91c6ff
+    );
+    -fx-background-radius: 16;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 22;
+    -fx-effect: dropshadow(gaussian, rgba(202, 167, 255, 0.45), 16, 0.3, 0, 0);
+}
+
+.jy-button-primary:hover {
+    -fx-background-color: linear-gradient(
+            to right,
+            #b892f0,
+            #78b8f8
+    );
+}
+
+/*
+    jy-button-secondary
+    ───────────────────
+    Второстепенное действие. Прозрачный, почти призрачный.
+
+*/
+
+.jy-button-secondary {
+    -fx-background-color: -jy-glass-strong;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(202, 167, 255, 0.40);
+    -fx-border-width: 1px;
+    -fx-text-fill: -jy-text;
+    -fx-padding: 10 22;
+}
+
+.jy-button-secondary:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.18);
+}
+
+/*
+    jy-button-ghost
+    ───────────────
+    Совсем лёгкая кнопка — только текст, без фона.
+
+*/
+
+.jy-button-ghost {
+    -fx-background-color: transparent;
+    -fx-background-radius: 12;
+    -fx-text-fill: -jy-text-light;
+    -fx-padding: 8 14;
+}
+
+.jy-button-ghost:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.12);
+    -fx-text-fill: -jy-text;
+}
+
+
+/* ─── Поля ввода ─────────────────────────────────────────────── */
+
+/*
+    jy-field
+
+*/
+
+.jy-field {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(202, 167, 255, 0.30);
+    -fx-border-width: 1px;
+    -fx-padding: 10 14;
+    -fx-text-fill: -jy-text;
+    -fx-prompt-text-fill: -jy-text-muted;
+}
+
+.jy-field:focused {
+    -fx-border-color: rgba(202, 167, 255, 0.75);
+    -fx-effect: dropshadow(gaussian, rgba(202, 167, 255, 0.25), 12, 0.2, 0, 0);
+}
+
+
+/* ─── Навигация ──────────────────────────────────────────────── */
+
+
+.jy-sidebar {
+    -fx-background-color: rgba(255, 255, 255, 0.65);
+    -fx-background-radius: 20 0 0 20;
+    -fx-border-color: rgba(255, 255, 255, 0.55);
+    -fx-border-width: 0 1px 0 0;
+    -fx-padding: 20;
+}
+
+
+.jy-nav-item {
+    -fx-background-radius: 14;
+    -fx-padding: 12 16;
+    -fx-text-fill: -jy-text;
+    -fx-cursor: hand;
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.jy-nav-item:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.12);
+}
+
+.jy-nav-item-active {
+    -fx-background-color: linear-gradient(
+            to right,
+            rgba(202, 167, 255, 0.28),
+            rgba(145, 198, 255, 0.28)
+    );
+    -fx-text-fill: #7a60cc;
+}
+
+
+.jy-nav-icon {
+    -fx-font-size: 16px;
+    -fx-text-fill: -jy-text-muted;
+    -fx-min-width: 20px;
+    -fx-alignment: center;
+}
+
+.jy-nav-item-active .jy-nav-icon {
+    -fx-text-fill: #a98cff;
+}
+
+.jy-nav-item-active .jy-nav-label {
+    -fx-text-fill: #7a60cc;
+    -fx-font-weight: bold;
+}
+
+.jy-nav-label {
+    -fx-font-family: "Inter";
+    -fx-font-size: 14px;
+    -fx-text-fill: -jy-text;
+}
+
+.jy-nav-item:hover .jy-nav-icon {
+    -fx-text-fill: #caa7ff;
+}
+
+.jy-nav-item:hover .jy-nav-label {
+    -fx-text-fill: -jy-text;
+}
+
+
+/* ─── Статистика ─────────────────────────────────────────────── */
+
+/*
+    jy-stat
+    ───────
+    Счётчик-виджет: задачи, проекты, продуктивность, серии дней.
+*/
+
+.jy-stat {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(202, 167, 255, 0.20);
+    -fx-border-width: 1px;
+    -fx-padding: 18;
+}
+
+
+/* ─── Прогресс-бар ───────────────────────────────────────────── */
+
+
+.progress-bar {
+    -fx-background-radius: 999;
+    -fx-background-color: rgba(202, 167, 255, 0.18);
+}
+
+.progress-bar .bar {
+    -fx-background-radius: 999;
+    -fx-background-color: linear-gradient(
+            to right,
+            #caa7ff,
+            #91c6ff
+    );
+}
+
+.progress-bar .track {
+    -fx-background-radius: 999;
+}
+
+
+/* ─── Задачи ─────────────────────────────────────────────────── */
+
+
+.task-row {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            -jy-bg-1,
+            -jy-bg-2
+    );
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255, 255, 255, 0.70);
+    -fx-border-width: 1px;
+    -fx-padding: 12 16;
+    -fx-cursor: hand;
+}
+
+.task-row:hover {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            -jy-bg-1,
+            rgba(145, 198, 255, 0.35)
+    );
+    -fx-border-color: rgba(202, 167, 255, 0.50);
+}
+
+.task-title {
+    -fx-font-family: "Inter";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7289DA;
+}
+
+.task-time {
+    -fx-font-family: "Inter";
+    -fx-font-size: 13px;
+    -fx-text-fill: -jy-text-muted;
+}
+
+
+.status-badge {
+    -fx-background-color: #7289DA;
+    -fx-background-radius: 6;
+    -fx-padding: 4 10;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.status-badge-done {
+    -fx-background-color: linear-gradient(to right, #a8edca, #91c6ff);
+    -fx-background-radius: 6;
+    -fx-padding: 4 10;
+    -fx-text-fill: #2d6e55;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.status-badge-overdue {
+    -fx-background-color: rgba(255, 158, 181, 0.30);
+    -fx-background-radius: 6;
+    -fx-padding: 4 10;
+    -fx-text-fill: #9e3a55;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+
+.task-tag {
+    -fx-background-radius: 999;
+    -fx-padding: 4 12;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+
+/* ─── Список ─────────────────────────────────────────────────── */
+
+.list-view {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 4 0;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: transparent;
+}
+
+
+/* ─── Эффекты ────────────────────────────────────────────────── */
+
+/*
+    jy-glow
+    ───────
+    Сказочное лавандовое свечение.
+
+*/
+
+.jy-glow {
+    -fx-effect: -jy-shadow-glow;
+}
+
+
+.jy-shimmer {
+    -fx-border-color: linear-gradient(
+            to bottom right,
+            rgba(202, 167, 255, 0.90),
+            rgba(145, 198, 255, 0.60),
+            rgba(255, 228, 168, 0.70)
+    );
+    -fx-border-width: 2px;
+    -fx-border-radius: inherit;
+}
+
+
+.jy-divider {
+    -fx-background-color: linear-gradient(
+            to right,
+            transparent,
+            rgba(202, 167, 255, 0.40),
+            rgba(145, 198, 255, 0.40),
+            transparent
+    );
+    -fx-pref-height: 1px;
+    -fx-max-height: 1px;
+}
+
+
+/* ─── Утилиты ────────────────────────────────────────────────── */
+
+.transparent {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.transparent .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.windowButton {
+    -fx-background-color: transparent;
+    -fx-background-radius: 999;
+}
+
+.windowButton:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.22);
+}
+
+.root {
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1px;
+}
+
+
+/* ─── Сайдбар: логотип ───────────────────────────────────────── */
+
+.jy-sidebar-logo {
+    -fx-padding: 0;
+}
+
+.jy-sidebar-logo-icon {
+    -fx-font-size: 22px;
+    -fx-text-fill: linear-gradient(to bottom right, #caa7ff, #91c6ff);
+}
+
+
+/* ─── Кнопки управления окном ────────────────────────────────── */
+
+.windowButton-icon {
+    -fx-font-size: 13px;
+    -fx-text-fill: -jy-text-muted;
+}
+
+.windowButton-minimize:hover {
+    -fx-background-color: rgba(145, 198, 255, 0.28);
+}
+
+.windowButton-maximize:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.28);
+}
+
+.windowButton-close:hover {
+    -fx-background-color: rgba(255, 158, 181, 0.35);
+}
+
+.windowButton-close:hover .windowButton-icon {
+    -fx-text-fill: #9e3a55;
+}
+
+
+/* ─── Экран авторизации ──────────────────────────────────────── */
+
+.jy-auth-root {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            -jy-bg-1,
+            -jy-bg-3
+    );
+}
+
+
+.jy-auth-panel {
+    -fx-background-color: linear-gradient(
+            to bottom,
+            rgba(202, 167, 255, 0.22),
+            rgba(145, 198, 255, 0.22)
+    );
+    -fx-border-color: rgba(255, 255, 255, 0.55);
+    -fx-border-width: 0 1px 0 0;
+    -fx-padding: 48;
+}
+
+
+.jy-auth-panel-title {
+    -fx-font-family: "Inter";
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to bottom right, #a98cff, #77bbff);
+    -fx-wrap-text: true;
+}
+
+.jy-auth-panel-subtitle {
+    -fx-font-family: "Inter";
+    -fx-font-size: 15px;
+    -fx-text-fill: -jy-text-light;
+    -fx-wrap-text: true;
+}
+
+
+.jy-auth-panel-dot {
+    -fx-background-radius: 999;
+    -fx-min-width: 8px;
+    -fx-min-height: 8px;
+    -fx-max-width: 8px;
+    -fx-max-height: 8px;
+    -fx-background-color: rgba(202, 167, 255, 0.35);
+}
+
+.jy-auth-panel-dot-active {
+    -fx-background-color: linear-gradient(to right, #caa7ff, #91c6ff);
+    -fx-effect: dropshadow(gaussian, rgba(202, 167, 255, 0.55), 8, 0.4, 0, 0);
+}
+
+.jy-auth-form {
+    -fx-background-color: -jy-glass-strong;
+    -fx-padding: 52 60;
+}
+
+
+.jy-field-wrap {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(202, 167, 255, 0.30);
+    -fx-border-width: 1px;
+}
+
+.jy-field-icon {
+    -fx-font-size: 17px;
+    -fx-text-fill: -jy-text-muted;
+    -fx-min-width: 40px;
+    -fx-alignment: center;
+}
+
+.jy-field-wrap .jy-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 12 14 12 0;
+}
+
+
+.jy-checkbox {
+    -fx-font-family: "Inter";
+    -fx-font-size: 13px;
+    -fx-text-fill: -jy-text-light;
+}
+
+.jy-checkbox .box {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-border-color: rgba(202, 167, 255, 0.40);
+    -fx-border-width: 1px;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+}
+
+.jy-checkbox:selected .mark {
+    -fx-background-color: #caa7ff;
+}
+
+
+.jy-hyperlink {
+    -fx-font-family: "Inter";
+    -fx-font-size: 13px;
+    -fx-text-fill: #91c6ff;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+    -fx-padding: 0;
+}
+
+.jy-hyperlink:hover {
+    -fx-text-fill: #caa7ff;
+}
+
+
+.jy-error-label {
+    -fx-font-family: "Inter";
+    -fx-font-size: 13px;
+    -fx-text-fill: #c0526e;
+    -fx-alignment: center;
+}
+
+
+.jy-footer-text {
+    -fx-font-family: "Inter";
+    -fx-font-size: 11px;
+    -fx-text-fill: -jy-text-muted;
+    -fx-border-color: transparent;
+}
+
+/* ─── Дашборд ────────────────────────────────────────────────── */
+
+
+.jy-hero-icon {
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+    /*-fx-text-fill: linear-gradient(to bottom right, #caa7ff, #91c6ff);*/
+}
+
+.jy-compliment-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: linear-gradient(to bottom right, #caa7ff, #91c6ff);
+}
+
+.jy-stat-delta {
+    -fx-font-family: "Inter";
+    -fx-font-size: 11px;
+}
+
+.jy-stat-delta-up {
+    -fx-text-fill: #68c49a;
+}
+
+.jy-stat-delta-down {
+    -fx-text-fill: #e07a9a;
+}
+
+
+.jy-section-icon {
+    -fx-font-size: 15px;
+    -fx-text-fill: -jy-text-muted;
+}
+
+.jy-section-title {
+    -fx-font-family: "Inter";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text;
+}
+
+
+.panel-title {
+    -fx-font-family: "Inter";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text;
+}
+
+
+.jy-btn-icon {
+    -fx-font-size: 15px;
+    -fx-text-fill: -jy-text;
+}
+
+.jy-btn-label {
+    -fx-font-family: "Inter";
+    -fx-font-size: 13px;
+    -fx-text-fill: -jy-text;
+}
+
+
+.jy-textarea {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(202, 167, 255, 0.30);
+    -fx-border-width: 1px;
+    -fx-padding: 10 14;
+    -fx-font-family: "Inter";
+    -fx-font-size: 13px;
+    -fx-text-fill: -jy-text;
+    -fx-prompt-text-fill: -jy-text-muted;
+}
+
+.jy-textarea:focused {
+    -fx-border-color: rgba(202, 167, 255, 0.75);
+    -fx-effect: dropshadow(gaussian, rgba(202, 167, 255, 0.22), 12, 0.2, 0, 0);
+}
+
+.jy-textarea .content {
+    -fx-background-color: transparent;
+}
+
+
+.jy-note-item {
+    -fx-padding: 12px 14px;
+    -fx-border-radius: 14px;
+    -fx-cursor: pointer;
+    -fx-display: flex;
+    -fx-flex-direction: column;
+    -fx-gap: 4px;
+    -fx-transition: background 0.15s;
+}
+
+.jy-note-item.active {
+    -fx-background-color: linear-gradient(to right, rgba(202, 167, 255, 0.22), rgba(145, 198, 255, 0.22));
+    -fx-border-color: rgba(202, 167, 255, 0.35);
+    -fx-border-width: 1px solid;
+}
+
+
+.jy-notes-sidebar {
+    -fx-background-color: rgba(255, 255, 255, 0.65);
+    -fx-border-color: rgba(202, 167, 255, 0.20);
+    -fx-border-width: 0 1px 0 0;
+}
+
+.jy-notes-sidebar-header {
+    -fx-border-color: rgba(202, 167, 255, 0.12);
+    -fx-border-width: 0 0 1px 0;
+}
+
+
+.jy-notes-search {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(202, 167, 255, 0.25);
+    -fx-border-width: 1px;
+    -fx-min-height: 36px;
+}
+
+.jy-notes-search-icon {
+    -fx-font-size: 16px;
+    -fx-text-fill: -jy-text-muted;
+    -fx-min-width: 36px;
+    -fx-alignment: center;
+}
+
+.jy-notes-search-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 6 10 6 0;
+    -fx-font-size: 13px;
+}
+
+
+.jy-notes-list {
+    -fx-padding: 4 10 12 10;
+}
+
+.jy-notes-list .list-cell {
+    -fx-padding: 2 0;
+}
+
+
+.jy-notes-editor {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+.jy-notes-toolbar {
+    -fx-border-color: rgba(202, 167, 255, 0.15);
+    -fx-border-width: 0 0 1px 0;
+    -fx-min-height: 58px;
+}
+
+.jy-notes-editor-title {
+    -fx-font-family: "Inter";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text;
+}
+
+
+.jy-button-ghost-danger:hover {
+    -fx-background-color: rgba(255, 158, 181, 0.25);
+    -fx-text-fill: #9e3a55;
+}
+
+.jy-button-ghost-danger:hover .jy-btn-icon,
+.jy-button-ghost-danger:hover .jy-btn-label {
+    -fx-text-fill: #9e3a55;
+}
+
+
+.jy-notes-title-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-font-family: "Inter";
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text;
+    -fx-prompt-text-fill: rgba(180, 185, 210, 0.80);
+}
+
+
+.jy-notes-body {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0 0 16 0;
+    -fx-font-family: "Inter";
+    -fx-font-size: 14px;
+    -fx-text-fill: -jy-text;
+    -fx-prompt-text-fill: rgba(180, 185, 210, 0.80);
+    -fx-line-spacing: 4;
+}
+
+.jy-notes-body .content {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+
+.jy-notes-tags-row {
+    -fx-padding: 0 0 14 0;
+}
+
+.jy-notes-add-tag {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(202, 167, 255, 0.40);
+    -fx-border-width: 1px;
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
+    -fx-padding: 2 10;
+    -fx-cursor: hand;
+}
+
+.jy-notes-add-tag:hover {
+    -fx-border-color: rgba(202, 167, 255, 0.75);
+}
+
+.jy-notes-add-tag .jy-caption {
+    -fx-text-fill: -jy-text-muted;
+}
+
+
+.jy-tag-purple {
+    -fx-background-color: rgba(202, 167, 255, 0.75);
+}
+
+.jy-tag-blue {
+    -fx-background-color: rgba(145, 198, 255, 0.80);
+}
+
+.jy-tag-gold {
+    -fx-background-color: rgba(255, 210, 120, 0.85);
+    -fx-text-fill: #7a5800;
+}
+
+
+.jy-notes-statusbar {
+    -fx-border-color: rgba(202, 167, 255, 0.15);
+    -fx-border-width: 1px 0 0 0;
+    -fx-min-height: 38px;
+}
+
+.jy-notes-save-btn {
+    -fx-min-height: 28px;
+    -fx-padding: 0 14;
+    -fx-font-size: 12px;
+
+}
+
+/* ─── Календарь ──────────────────────────────────────────────── */
+
+
+.jy-cal-header {
+    -fx-border-color: rgba(202, 167, 255, 0.18);
+    -fx-border-width: 0 0 1px 0;
+    -fx-min-height: 62px;
+}
+
+.jy-cal-nav-btn {
+    -fx-min-width: 32px;
+    -fx-min-height: 32px;
+    -fx-max-width: 32px;
+    -fx-max-height: 32px;
+    -fx-padding: 0;
+}
+
+.jy-cal-nav-icon {
+    -fx-font-size: 12px;
+    -fx-text-fill: -jy-text-muted;
+}
+
+.jy-cal-today-btn {
+    -fx-min-height: 34px;
+    -fx-padding: 0 16;
+    -fx-font-size: 13px;
+}
+
+
+.jy-cal-weekdays {
+    -fx-border-color: rgba(202, 167, 255, 0.18);
+    -fx-border-width: 0 0 1px 0;
+}
+
+.jy-cal-weekday-label {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text-muted;
+    -fx-alignment: center;
+    letter-spacing: 0.5px;
+}
+
+.jy-cal-weekend-label {
+    -fx-text-fill: rgba(202, 167, 255, 0.70);
+}
+
+.jy-cal-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.jy-cal-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.jy-cal-grid {
+    -fx-background-color: transparent;
+}
+
+.jy-cal-day-cell {
+    -fx-border-color: rgba(202, 167, 255, 0.12);
+    -fx-border-width: 0 1px 1px 0;
+    -fx-padding: 8 8 6 8;
+    -fx-cursor: hand;
+    -fx-min-height: 100px;
+}
+
+.jy-cal-day-cell:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.07);
+}
+
+.jy-cal-day-other {
+    -fx-opacity: 0.38;
+}
+
+.jy-cal-day-selected {
+    -fx-background-color: rgba(202, 167, 255, 0.12);
+}
+
+.jy-cal-day-selected .jy-cal-day-number {
+    -fx-text-fill: #8b62d4;
+    -fx-font-weight: bold;
+}
+
+
+.jy-cal-day-number {
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+    -fx-text-fill: -jy-text;
+    -fx-min-width: 26px;
+    -fx-min-height: 26px;
+    -fx-max-width: 26px;
+    -fx-max-height: 26px;
+    -fx-alignment: center;
+    -fx-background-radius: 999;
+}
+
+.jy-cal-day-today .jy-cal-day-number {
+    -fx-background-color: linear-gradient(to bottom right, #caa7ff, #91c6ff);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(202, 167, 255, 0.45), 8, 0.35, 0, 2);
+}
+
+/*
+    jy-cal-event-chip
+    ─────────────────
+    Плашка события внутри ячейки дня.
+    Цветные варианты: -purple / -blue / -gold / -pink
+*/
+
+.jy-cal-event-chip {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 2 6;
+    -fx-text-fill: white;
+}
+
+.jy-cal-event-chip-purple {
+    -fx-background-color: rgba(202, 167, 255, 0.80);
+}
+
+.jy-cal-event-chip-blue {
+    -fx-background-color: rgba(145, 198, 255, 0.85);
+    -fx-text-fill: #1a4a7a;
+}
+
+.jy-cal-event-chip-gold {
+    -fx-background-color: rgba(255, 210, 120, 0.90);
+    -fx-text-fill: #7a5800;
+}
+
+.jy-cal-event-chip-pink {
+    -fx-background-color: rgba(255, 158, 181, 0.80);
+}
+
+.jy-cal-more-chip {
+    -fx-font-size: 10px;
+    -fx-text-fill: -jy-text-muted;
+    -fx-padding: 0 2;
+}
+
+
+.jy-cal-day-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.65);
+    -fx-border-color: rgba(202, 167, 255, 0.20);
+    -fx-border-width: 0 0 0 1px;
+}
+
+.jy-cal-day-panel-header {
+    -fx-border-color: rgba(202, 167, 255, 0.14);
+    -fx-border-width: 0 0 1px 0;
+}
+
+.jy-cal-events-list {
+    -fx-padding: 8 12 8 12;
+}
+
+.jy-cal-empty-icon {
+    -fx-font-size: 28px;
+    -fx-text-fill: -jy-primary;
+    -fx-opacity: 0.5;
+}
+
+
+.jy-cal-event-card {
+    -fx-background-color: rgba(255, 255, 255, 0.88);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #caa7ff;
+    -fx-border-width: 0 0 0 3px;
+    -fx-padding: 10 12;
+    -fx-cursor: hand;
+}
+
+.jy-cal-event-card:hover {
+    -fx-background-color: rgba(248, 244, 255, 0.95);
+    -fx-border-color: rgba(202, 167, 255, 0.75);
+}
+
+.jy-cal-event-card-blue {
+    -fx-border-color: #91c6ff;
+}
+
+.jy-cal-event-card-gold {
+    -fx-border-color: #ffd278;
+}
+
+.jy-cal-event-card-pink {
+    -fx-border-color: #ff9eb5;
+}
+
+.jy-cal-event-name {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text;
+}
+
+.jy-cal-event-time {
+    -fx-font-size: 11px;
+    -fx-text-fill: -jy-text-muted;
+}
+
+
+.jy-context-menu {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(202, 167, 255, 0.35);
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(110, 140, 255, 0.18), 24, 0.2, 0, 6);
+    -fx-padding: 6;
+}
+
+.jy-ctx-item {
+    -fx-background-radius: 9;
+    -fx-padding: 9 14;
+    -fx-font-size: 13px;
+    -fx-text-fill: -jy-text;
+    -fx-cursor: hand;
+}
+
+.jy-ctx-item:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.12);
+    -fx-text-fill: #7a50cc;
+}
+
+.jy-ctx-item-danger:hover {
+    -fx-background-color: rgba(255, 158, 181, 0.18);
+    -fx-text-fill: #9e3a55;
+}
+
+/* ─── Note Row ───────────────────────────── */
+
+.jy-note-row {
+    -fx-background-color: transparent;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 12 14;
+    -fx-cursor: hand;
+}
+
+.jy-note-row:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.08);
+}
+
+.jy-note-row-active {
+    -fx-background-color: linear-gradient(
+            to right,
+            rgba(202, 167, 255, 0.22),
+            rgba(145, 198, 255, 0.22)
+    );
+
+    -fx-border-color: rgba(202, 167, 255, 0.35);
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-effect: -jy-shadow-soft;
+}
+
+.jy-note-row-active:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.18);
+}
+
+
+.jy-note-title {
+    -fx-font-family: "Inter";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text;
+}
+
+.jy-note-date {
+    -fx-font-size: 11px;
+    -fx-text-fill: -jy-text-muted;
+}
+
+.jy-note-preview {
+    -fx-font-size: 13px;
+    -fx-text-fill: -jy-text-light;
+}
+
+.jy-note-row-active .jy-note-title {
+    -fx-text-fill: #5c6fc8;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+.jy-tasks-filter-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(202, 167, 255, 0.28);
+    -fx-border-width: 1px;
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
+    -fx-padding: 3 10;
+    -fx-font-size: 11px;
+    -fx-text-fill: -jy-text-muted;
+    -fx-cursor: pointer;
+}
+
+.jy-tasks-filter-active {
+    -fx-background-color: linear-gradient(to right, rgba(202, 167, 255, 0.30), rgba(145, 198, 255, 0.30));
+    -fx-border-color: rgba(202, 167, 255, 0.50);
+    -fx-text-fill: #7a50cc;
+
+}
+
+.jy-tasks-combo {
+    -fx-padding: 0 10px;
+    -fx-border-radius: 10px;
+    -fx-cursor: pointer;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(202, 167, 255, 0.28);
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 10;
+    -fx-font-size: 12px;
+    -fx-color: #4d5687;
+    -fx-outline: none;
+}
+
+.jy-tasks-combo:hover {
+    -fx-border-color: rgba(202, 167, 255, 0.9);
+}
+
+.jy-tasks-date-field {
+    -fx-flex: 1;
+    -fx-border: none;
+    -fx-background: transparent;
+    -fx-outline: none;
+    -fx-font-size: 12px;
+    -fx-color: #FFFFFF;
+    -fx-padding: 0 10px;
+}
+
+
+#priorityCombo .list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: linear-gradient(
+            to bottom right,
+            -jy-primary,
+            -jy-secondary
+    );
+    -fx-border-radius: 10;
+}
+
+#priorityCombo .list-cell {
+    -fx-text-fill: #4d5687;
+    -fx-padding: 5 10;
+
+}
+
+#priorityCombo .list-cell:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.3);
+}
+
+
+#statusCombo .list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: linear-gradient(
+            to bottom right,
+            -jy-primary,
+            -jy-secondary
+    );
+    -fx-border-radius: 10;
+}
+
+#statusCombo .list-cell {
+    -fx-text-fill: #4d5687;
+    -fx-padding: 5 10;
+
+}
+
+#statusCombo .list-cell:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.3);
+}
+
+.jy-task-row {
+    -fx-background-color: transparent;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 12 14;
+    -fx-cursor: hand;
+}
+
+.jy-task-row:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.08);
+}
+
+.jy-task-row-active {
+    -fx-background-color: linear-gradient(
+            to right,
+            rgba(202, 167, 255, 0.22),
+            rgba(145, 198, 255, 0.22)
+    );
+
+    -fx-border-color: rgba(202, 167, 255, 0.35);
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-effect: -jy-shadow-soft;
+}
+
+.jy-task-row-active:hover {
+    -fx-background-color: rgba(202, 167, 255, 0.18);
+}
+
+.jy-task-title {
+    -fx-font-family: "Inter";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text;
+}
+
+.jy-task-date {
+    -fx-font-size: 11px;
+    -fx-text-fill: -jy-text-muted;
+}
+
+.jy-task-preview {
+    -fx-font-size: 13px;
+    -fx-text-fill: -jy-text-light;
+}
+
+.jy-task-row-active .jy-task-title {
+    -fx-text-fill: #5c6fc8;
+}
+
+.jy-task-editor {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+}
+
+.jy-task-editor-title {
+    -fx-font-family: "Inter";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -jy-text;
+}
+
+.jy-task-status-badge {
+    -fx-font-size: 13px;
+    -fx-text-fill: -jy-text-light;
+}
+
+.jy-main-logo {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #a98cff, #77bbff);
+    -fx-effect: dropshadow(gaussian, rgb(255, 255, 255), 23, 0.3, 0, 0);
+    -fx-font-family: "Cinzel Decorative";
+}

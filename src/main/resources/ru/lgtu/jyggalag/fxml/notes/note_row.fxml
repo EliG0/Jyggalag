@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="260" spacing="6" styleClass="jy-note-row" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+
+    <padding>
+        <Insets bottom="12" left="14" right="14" top="12" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT">
+
+        <Label fx:id="titleLabel" styleClass="jy-note-title" text="Дизайн-система Jyggalag" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Label fx:id="dateLabel" styleClass="jy-note-date" text="сегодня" />
+
+    </HBox>
+
+    <Label fx:id="previewLabel" styleClass="jy-note-preview" wrapText="true" />
+
+    <HBox fx:id="tagsBox" spacing="6" />
+
+</VBox>

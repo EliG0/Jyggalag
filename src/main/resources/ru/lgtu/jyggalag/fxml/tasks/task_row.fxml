@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="root" alignment="CENTER_LEFT" spacing="12" styleClass="jy-task-row" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+
+    <padding>
+        <Insets bottom="12" left="14" right="14" top="12" />
+    </padding>
+
+    <CheckBox id="taskCheckBox" fx:id="taskCheckBox" mnemonicParsing="false" styleClass="jy-checkbox" />
+
+    <VBox spacing="6" HBox.hgrow="ALWAYS">
+
+
+        <HBox alignment="CENTER_LEFT" spacing="8.0">
+
+            <Label id="taskTitle" fx:id="taskTitle" styleClass="jy-task-title" text="Рефакторинг архитектуры проекта" wrapText="true" />
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Label id="taskTime" fx:id="taskTime" styleClass="jy-task-date" text="14:20" />
+
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="8">
+
+            <Label id="taskStatus" fx:id="taskStatus" styleClass="jy-task-status-badge" text="TODO" />
+
+            <Label id="taskTag" fx:id="taskTag" styleClass="task-tag" text="архитектура" />
+
+        </HBox>
+
+    </VBox>
+
+</HBox>

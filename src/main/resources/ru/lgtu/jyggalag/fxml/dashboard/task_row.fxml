@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0" styleClass="task-row" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="12.0" left="15.0" right="15.0" top="12.0" />
+    </padding>
+    <children>
+
+        <CheckBox fx:id="taskCheckBox" mnemonicParsing="false" styleClass="jy-checkbox" />
+
+        <Label fx:id="taskTitle" styleClass="task-title" text="Название задачи" HBox.hgrow="ALWAYS" />
+      <Region HBox.hgrow="ALWAYS" />
+
+        <StackPane alignment="CENTER" prefWidth="120.0">
+            <Label fx:id="taskStatus" styleClass="status-badge" text="В ПРОЦЕССЕ" />
+        </StackPane>
+      <Region />
+
+        <StackPane alignment="CENTER" prefWidth="100.0">
+            <Label fx:id="taskTag" styleClass="task-tag" text="Ананас" />
+        </StackPane>
+      <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+
+        <Label fx:id="taskTime" alignment="CENTER" disable="true" styleClass="task-time" text="18:00" visible="false" />
+
+    </children>
+</HBox>

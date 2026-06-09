@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="SYSTEM_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/system.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="AUDIT_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/audit.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [USER_ACTION] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="SYSTEM" level="INFO" additivity="false">
+        <appender-ref ref="SYSTEM_FILE"/>
+    </logger>
+
+    <logger name="AUDIT" level="INFO" additivity="false">
+        <appender-ref ref="AUDIT_FILE"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="SYSTEM_FILE"/>
+    </root>
+
+</configuration>

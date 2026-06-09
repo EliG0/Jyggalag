@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="0" styleClass="transparent" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.lgtu.jyggalag.ui.controllers.TasksController">
+    <VBox fx:id="tasksSidebar" maxWidth="380.0" minWidth="300.0" prefWidth="340.0" spacing="0" styleClass="jy-notes-sidebar">
+
+        <VBox spacing="12" styleClass="jy-notes-sidebar-header">
+            <padding>
+                <Insets bottom="16" left="20" right="16" top="24" />
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label styleClass="jy-section-icon" text="☑" />
+                <Label styleClass="jy-section-title" text="Мои задачи" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="tasksTotalLabel" styleClass="jy-label" text="0" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" minHeight="38.0" styleClass="jy-notes-search">
+                <Label styleClass="jy-notes-search-icon" text="⌕" />
+                <TextField fx:id="searchField" maxWidth="1.7976931348623157E308" onKeyReleased="#handleSearch" promptText="Поиск задач..." styleClass="jy-field,jy-notes-search-field" HBox.hgrow="ALWAYS" />
+            </HBox>
+
+            <HBox spacing="6">
+                <Button fx:id="filterAll" onAction="#handleFilterAll" styleClass="jy-tasks-filter-btn,jy-tasks-filter-active" text="Все" />
+                <Button fx:id="filterActive" onAction="#handleFilterActive" styleClass="jy-tasks-filter-btn" text="Активные" />
+                <Button fx:id="filterDone" onAction="#handleFilterDone" styleClass="jy-tasks-filter-btn" text="Выполненные" />
+            </HBox>
+
+        </VBox>
+      <Region maxWidth="1.7976931348623157E308" styleClass="jy-divider">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Region>
+
+        <VBox styleClass="jy-notes-new-wrap">
+            <padding>
+                <Insets left="16.0" right="16.0" />
+            </padding>
+            <Button maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleNewTask" prefWidth="287.0" styleClass="jy-button-primary">
+                <graphic>
+                    <HBox alignment="CENTER" spacing="8">
+                        <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="+" />
+                        <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px;" text="Новая задача" />
+                    </HBox>
+                </graphic>
+            </Button>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+        </VBox>
+
+        <ListView fx:id="tasksList" maxWidth="1.7976931348623157E308" onMouseClicked="#handleTaskSelect" styleClass="list-view,jy-notes-list" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets top="12.0" />
+         </padding></ListView>
+
+    </VBox>
+
+
+    <VBox fx:id="taskEditor" spacing="0" HBox.hgrow="ALWAYS">
+
+
+        <HBox fx:id="editorToolbar" minHeight="60.0" spacing="8" styleClass="jy-notes-toolbar">
+            <padding>
+                <Insets left="24.0" right="24.0" top="16.0" />
+            </padding>
+
+            <VBox spacing="2" HBox.hgrow="ALWAYS">
+                <Label fx:id="editorTaskTitle" styleClass="jy-notes-editor-title" text="Выберите задачу" />
+                <Label fx:id="editorTaskMeta" styleClass="jy-caption" text="Нажмите на задачу из списка слева" />
+            </VBox>
+
+            <Button fx:id="doneButton" disable="true" mnemonicParsing="false" onAction="#handleMarkDone" styleClass="jy-button-ghost" visible="false">
+                <graphic>
+                    <HBox alignment="CENTER" spacing="6">
+                        <Label styleClass="jy-btn-icon" text="✓" />
+                        <Label styleClass="jy-btn-label" text="Выполнено" />
+                    </HBox>
+                </graphic>
+            </Button>
+
+            <Button fx:id="deleteButton" disable="true" mnemonicParsing="false" onAction="#handleDeleteTask" styleClass="jy-button-ghost,jy-button-ghost-danger" visible="false">
+                <graphic>
+                    <HBox alignment="CENTER" spacing="6">
+                        <Label styleClass="jy-btn-icon" text="✕" />
+                        <Label styleClass="jy-btn-label" text="Удалить" />
+                    </HBox>
+                </graphic>
+            </Button>
+
+        </HBox>
+
+        <Region maxWidth="1.7976931348623157E308" styleClass="jy-divider" />
+
+
+        <VBox styleClass="jy-notes-title-wrap">
+            <padding>
+                <Insets bottom="8" left="48" right="48" top="28" />
+            </padding>
+            <TextField fx:id="taskTitleField" maxWidth="1.7976931348623157E308" onKeyReleased="#handleTitleEdit" promptText="Название задачи..." styleClass="jy-notes-title-field" />
+        </VBox>
+
+
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="jy-tasks-meta-row">
+            <padding>
+                <Insets bottom="12" left="48" right="48" top="4" />
+            </padding>
+
+            <!-- Статус -->
+            <VBox spacing="4">
+                <Label styleClass="jy-label" text="СТАТУС" />
+                <ComboBox fx:id="statusCombo" minHeight="30.0" minWidth="90.0" onAction="#handleStatusChange" styleClass="jy-tasks-combo" />
+            </VBox>
+
+
+            <VBox spacing="4">
+                <Label styleClass="jy-label" text="ПРИОРИТЕТ" />
+                <ComboBox fx:id="priorityCombo" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="90.0" onAction="#handlePriorityChange" styleClass="jy-tasks-combo" />
+            </VBox>
+
+        </HBox>
+      <HBox fx:id="tagsRow" spacing="6" styleClass="jy-notes-tags-row">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleAddTag" styleClass="jy-notes-add-tag">
+               <graphic>
+                  <Label styleClass="jy-caption" text="+ тег" />
+               </graphic>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets left="48.0" right="48.0" />
+         </VBox.margin>
+      </HBox>
+
+
+        <Region maxWidth="1.7976931348623157E308" styleClass="jy-divider">
+            <VBox.margin>
+                <Insets left="48" right="48" />
+            </VBox.margin>
+        </Region>
+
+
+        <VBox spacing="8" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="0" left="48" right="48" top="16" />
+            </padding>
+            <Label styleClass="jy-label" text="ОПИСАНИЕ" />
+            <TextArea fx:id="taskDescField" maxWidth="1.7976931348623157E308" onKeyReleased="#handleDescEdit" promptText="Добавьте подробности задачи..." styleClass="jy-notes-body" wrapText="true" VBox.vgrow="ALWAYS" />
+        </VBox>
+
+
+        <HBox alignment="CENTER_LEFT" minHeight="40.0" spacing="16" styleClass="jy-notes-statusbar">
+            <padding>
+                <Insets left="24.0" right="24.0" />
+            </padding>
+
+            <Label fx:id="createdLabel" styleClass="jy-caption" text="Создано: —" />
+            <Label styleClass="jy-caption" text="·" />
+            <Label fx:id="modifiedLabel" styleClass="jy-caption" text="Изменено: —" />
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveTask">
+                <graphic>
+                    <HBox alignment="CENTER" spacing="6">
+                        <Label style="-fx-text-fill: rgba(255,255,255,1);" styleClass="jy-btn-icon" text="◈" />
+                        <Label style="-fx-text-fill: rgba(255,255,255,1);" styleClass="jy-btn-label" text="Сохранить" />
+                    </HBox>
+                </graphic>
+            <styleClass>
+               <String fx:value="jy-button-primary" />
+               <String fx:value="jy-notes-save-btn" />
+            </styleClass>
+            </Button>
+
+        </HBox>
+
+    </VBox>
+
+</HBox>

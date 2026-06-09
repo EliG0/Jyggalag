@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox minWidth="900.0" spacing="20" styleClass="transparent" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.lgtu.jyggalag.ui.controllers.DashboardController">
+    <padding>
+        <Insets bottom="28" left="28" right="28" top="28" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label styleClass="jy-title" text="Сегодня" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="dateLabel" styleClass="jy-subtitle" text="Понедельник, 1 января" />
+    </HBox>
+
+    <HBox maxWidth="1.7976931348623157E308" prefWidth="1137.0" spacing="16">
+
+        <VBox fx:id="welcomeCard" minWidth="320.0" spacing="12" styleClass="jy-hero-card" HBox.hgrow="ALWAYS">
+            <VBox>
+                <children>
+                    <VBox spacing="4">
+                        <Label styleClass="jy-hero-icon" text="✦" />
+                        <Label fx:id="welcomeTitle" styleClass="jy-welcomeCardTitle" text="Доброе утро!" />
+                        <Label fx:id="welcomeSubTitle" styleClass="jy-subtitle" />
+                    </VBox>
+                </children>
+            </VBox>
+
+            <VBox spacing="6">
+                <HBox alignment="CENTER_LEFT">
+                    <Region HBox.hgrow="ALWAYS" />
+                </HBox>
+            </VBox>
+
+        </VBox>
+
+        <VBox fx:id="tasksCard" alignment="TOP_LEFT" minWidth="150.0" spacing="0" styleClass="jy-stat">
+            <Label styleClass="jy-label" text="ВСЕГО ЗАДАЧ" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Label fx:id="tasksTotalLabel" styleClass="jy-cardText" text="0" />
+            <Label disable="true" styleClass="jy-caption" text="на сегодня" visible="false" />
+        </VBox>
+
+        <VBox fx:id="completeCard" alignment="TOP_LEFT" minWidth="150.0" spacing="0" styleClass="jy-stat">
+            <Label styleClass="jy-label" text="ВЫПОЛНЕНО" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Label fx:id="tasksDoneLabel" styleClass="jy-cardText" text="0" />
+            <Label disable="true" styleClass="jy-stat-delta,jy-stat-delta-up" text="↑ +0 за день" visible="false" />
+        </VBox>
+
+        <VBox fx:id="progressCard" alignment="TOP_LEFT" minWidth="148.0" spacing="0" styleClass="jy-stat">
+            <Label styleClass="jy-label" text="ПРОГРЕСС" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Label fx:id="progressLabel" styleClass="jy-cardText" text="0%" />
+            <Label styleClass="jy-caption" text="выполнено" />
+        </VBox>
+
+        <VBox fx:id="complimentCard" alignment="TOP_LEFT" minWidth="180.0" spacing="8" styleClass="jy-stat">
+            <Label styleClass="jy-label" text="КОМПЛИМЕНТ ДНЯ" />
+            <Label styleClass="jy-compliment-icon" text="✦" />
+            <Label fx:id="complimentLabel" styleClass="jy-subtitle" text="Ты справляешься лучше, чем думаешь." wrapText="true" />
+        </VBox>
+    </HBox>
+
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+        <VBox spacing="12" styleClass="jy-card" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label styleClass="jy-section-icon" text="☑" />
+                <Label styleClass="jy-section-title" text="Задачи" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="taskCountBadge" styleClass="status-badge" text="0" />
+            </HBox>
+
+            <ListView fx:id="taskList" maxWidth="1.7976931348623157E308" onMouseClicked="#handleListEdit" styleClass="list-view" VBox.vgrow="ALWAYS" />
+
+        </VBox>
+
+    </HBox>
+
+</VBox>
