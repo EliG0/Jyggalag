@@ -81,7 +81,7 @@ public class TaskService {
         }
 
         Task task = taskOpt.get();
-        String oldTitle = task.getTitle();
+        Task oldTask = task;
 
         if (updatedTask.getTitle() != null) {
             task.setTitle(updatedTask.getTitle());
@@ -89,6 +89,11 @@ public class TaskService {
         if (updatedTask.getDescription() != null) {
             task.setDescription(updatedTask.getDescription());
         }
+
+        if (updatedTask.getTags() != null) {
+            task.setTags(updatedTask.getTags());
+        }
+
         if (updatedTask.getPriority() != null) {
             task.setPriority(updatedTask.getPriority());
         }
@@ -110,7 +115,7 @@ public class TaskService {
             return OperationResult.failure(saveResult.getErrorMessage());
         }
 
-        LogService.userAction("ID_" + userId, "Отредактировал задачу: " + oldTitle + " -> " + task.getTitle());
+        LogService.userAction("ID_" + userId, "Отредактировал задачу: " + oldTask + " -> " + task);
         return OperationResult.success(null);
     }
 

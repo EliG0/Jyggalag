@@ -217,8 +217,10 @@ public class TasksController {
         List<Task> filtered = allLoadedTasks.stream()
                 .filter(task -> {
                     return switch (currentFilter) {
-                        case "ACTIVE" -> (task.getStatus() != TaskStatus.DONE && task.getStatus() != TaskStatus.CANCELLED);
-                        case "DONE" -> (task.getStatus() == TaskStatus.DONE || task.getStatus() == TaskStatus.CANCELLED);
+                        case "ACTIVE" ->
+                                (task.getStatus() != TaskStatus.DONE && task.getStatus() != TaskStatus.CANCELLED);
+                        case "DONE" ->
+                                (task.getStatus() == TaskStatus.DONE || task.getStatus() == TaskStatus.CANCELLED);
                         default -> true;
                     };
                 })
@@ -257,7 +259,6 @@ public class TasksController {
         modifiedLabel.setText("Изменено: " + (selected.getUpdatedAt() != null ? DateUtils.formatDateTime(selected.getUpdatedAt()) : "—"));
 
 
-
         editorToolbar.getChildren().forEach(node -> {
             if (node instanceof Button) {
                 setVisibleNode(node, true);
@@ -276,8 +277,28 @@ public class TasksController {
 
         currentTask.setTitle(taskTitleField.getText());
         currentTask.setDescription(taskDescField.getText());
-        currentTask.setStatus(statusCombo.getValue());
+
+        List<String> tagList = new ArrayList<>();
+        if (tagsRow != null && !tagsRow.getChildren().isEmpty()) {
+            Node first = tagsRow.getChildren().getFirst();
+            if (first instanceof HBox) {
+                HBox badge = (HBox) first;
+                if (!badge.getChildren().isEmpty() && badge.getChildren().getFirst() instanceof Label) {
+                    String text = ((Label) badge.getChildren().getFirst()).getText();
+                    if (text != null && !text.trim().isEmpty()) tagList.add(text.trim());
+                }
+            } else if (first instanceof TextField) {
+                String text = ((TextField) first).getText();
+                if (text != null && !text.trim().isEmpty()) tagList.add(text.trim());
+            } else if (first instanceof Label) {
+                String text = ((Label) first).getText();
+                if (text != null && !text.trim().isEmpty()) tagList.add(text.trim());
+            }
+        }
+        currentTask.setTags(tagList);
+
         currentTask.setPriority(priorityCombo.getValue());
+        currentTask.setStatus(statusCombo.getValue());
         currentTask.setUpdatedAt(LocalDateTime.now());
         currentTask.setColor(currentTask.getColor());
 
@@ -355,7 +376,7 @@ public class TasksController {
         refreshTasksList();
         tasksList.getSelectionModel().clearSelection();
         editorToolbar.getChildren().forEach(node -> {
-                setVisibleNode(node, false);
+            setVisibleNode(node, false);
         });
         initialize();
     }
@@ -501,9 +522,9 @@ public class TasksController {
             colorPicker.setOnAction(colorEvent -> {
                 javafx.scene.paint.Color chosenColor = colorPicker.getValue();
                 String hexColor = String.format("#%02X%02X%02X",
-                        (int)(chosenColor.getRed() * 255),
-                        (int)(chosenColor.getGreen() * 255),
-                        (int)(chosenColor.getBlue() * 255));
+                        (int) (chosenColor.getRed() * 255),
+                        (int) (chosenColor.getGreen() * 255),
+                        (int) (chosenColor.getBlue() * 255));
 
                 currentTask.setColor(hexColor);
                 refreshTags();
@@ -572,7 +593,7 @@ public class TasksController {
 
     }
 
-    void setVisibleNode(Node node, boolean bool){
+    void setVisibleNode(Node node, boolean bool) {
         node.setVisible(bool);
         node.setDisable(!bool);
     }

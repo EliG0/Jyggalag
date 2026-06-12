@@ -137,6 +137,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{id=%d, title='%s', status=%s, priority=%s}".formatted(id, title, status, priority);
+        return "Task{id=%d, title='%s', status=%s, priority=%s, tags=%s}".formatted(id, title, status, priority, tags);
     }
 }
